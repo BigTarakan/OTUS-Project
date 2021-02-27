@@ -1,6 +1,6 @@
 package ru.bigtarakan.console
 
-import ru.bigtarakan.console.lesson2.T5Primes
+import ru.bigtarakan.console.lesson3.T0Bits
 
 object Main {
     @JvmStatic
@@ -16,6 +16,13 @@ object Main {
         //println(T4Fibo().matrixPow(arrayOf("18")))
         //Tester().runTests({fArgs -> T4Fibo().matrixPow(fArgs)}, "4.Fibo")
         //println(T5Primes().checkErato3(arrayOf("10")))
-        Tester().runTests({fArgs -> T5Primes().checkErato3(fArgs)}, "5.Primes")
+        //Tester().runTests({fArgs -> T5Primes().checkErato3(fArgs)}, "5.Primes")
+
+        //T0Bits().rook(arrayOf("0")).forEach { println(it) }
+        //Tester().runTestsMultiline({fArgs -> T0Bits().king(fArgs)}, "6.Bitboard-King")
+        //Tester().runTestsMultiline({fArgs -> T0Bits().knight(fArgs)}, "6.Bitboard-Knight")
+        //Tester().runTestsMultiline({fArgs -> T0Bits().bishop(fArgs)}, "6.Bitboard-Bishop")
+//        Tester().runTestsMultiline({fArgs -> T0Bits().rook(fArgs)}, "6.Bitboard-Rook")
+        Tester().runTestsMultiline({fArgs -> T0Bits().queen(fArgs)}, "6.Bitboard-Queen")
     }
 }

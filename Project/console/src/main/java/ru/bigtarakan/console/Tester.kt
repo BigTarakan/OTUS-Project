@@ -48,4 +48,37 @@ class Tester {
 
         return success
     }
+
+    fun runTestsMultiline(func: (args: Array<String>) -> Array<String>, testsFolder: String): Boolean {
+        var testNum = 0
+        var success = true
+
+        do {
+            try {
+                val inList = File("Tests/$testsFolder/test.$testNum.in").readLines()
+                val outList = File("Tests/$testsFolder/test.$testNum.out").readLines()
+
+                val a = func(inList.toTypedArray())
+                val b = outList
+                var result = true
+                for (i in a.indices) {
+                    if (a[i] != b [i]) result = false
+                }
+
+                println(if (result) "passed" else "failed")
+                testNum++
+            } catch (e: Exception) {
+                //e.printStackTrace()
+                break
+            }
+        } while (true)
+
+        println()
+        if (testNum == 0) {
+            println("Test init error")
+            return false
+        } else println("Testing ${if (success) "completed successfully" else "FAILED"}")
+
+        return success
+    }
 }
